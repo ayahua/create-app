@@ -1,0 +1,23 @@
+{
+  "name": "create-app",
+  "version": "0.0.1",
+  "description": "react脚手架",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayahua/create-app.git"
+  },
+  "author": "华森",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayahua/create-app/issues"
+  },
+  "homepage": "https://github.com/ayahua/create-app#readme",
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
