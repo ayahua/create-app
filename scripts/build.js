@@ -7,7 +7,6 @@ async function build () {
   process.env.NODE_ENV = process.env.NODE_ENV || 'production'
   const webpackConfig = require('../config/webpack.config.prod')
   const version = process.env.VERSION
-  console.log('version...', version)
 
   if (isConfirm) {
     webpack(webpackConfig, async function (err, stats) {
@@ -37,7 +36,7 @@ async function build () {
       )
       await execa(
         'npm',
-        ['--version', version, '-m', `build: update version v${version}`],
+        ['version', version, '-m', `build: update version v${version}`],
         { stdio: 'inherit' }
       )
       console.debug('  Build complete.\n')
