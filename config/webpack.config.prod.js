@@ -1,5 +1,6 @@
 const { merge } = require('webpack-merge')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const baseConfig = require('./webpack.config.base')
 const { BUILD_DIR, SRC_DIR } = require('./path.config')
 
@@ -8,7 +9,7 @@ const prodConfig = {
   output: {
     filename: 'scripts/[name]-[contenthash:8].js',
     path: BUILD_DIR,
-    publicPath: '',
+    publicPath: '/',
     ecmaVersion: 5
   },
   module: {
@@ -30,6 +31,9 @@ const prodConfig = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'assets/[name]-[contenthash:8].css'
+    }),
+    new CleanWebpackPlugin({
+      cleanOnceBeforeBuildPatterns: ['**/*']
     })
   ]
 }
