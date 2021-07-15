@@ -53,6 +53,28 @@ const webpackConfig = {
         ]
       },
       {
+        test: /\.less$/,
+        include: /node_modules\//,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+            }
+          },
+          {
+            loader: 'less-loader',
+            options: {
+              lessOptions: {
+                javascriptEnabled: true,
+                paths: [STYLES_DIR]
+              }
+            }
+          }
+        ]
+      },
+      {
         test: /\.png$/,
         use: ['file-loader']
       },
